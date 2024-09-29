@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Inventario</title>
+    <link rel="stylesheet" href="estilogestion.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Inventario ULEAM</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Gestión de Equipos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Mantenimiento</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Usuarios</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="dashboard-title">Panel de Control - Gestión de Inventario</h1>
+
+        <div class="row">
+            <div class="col-lg-3 col-sm-6">
+                <div class="card bg-primary text-white text-center">
+                    <div class="card-body">
+                        <h4>Total Equipos</h4>
+                        <h2>150</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card bg-success text-white text-center">
+                    <div class="card-body">
+                        <h4>Equipos Asignados</h4>
+                        <h2>120</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card bg-warning text-white text-center">
+                    <div class="card-body">
+                        <h4>En Mantenimiento</h4>
+                        <h2>10</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card bg-danger text-white text-center">
+                    <div class="card-body">
+                        <h4>Licencias Vencidas</h4>
+                        <h2>5</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Distribución de Equipos por Departamento</h4>
+                        <canvas id="departamentoChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Estado de los Equipos</h4>
+                        <canvas id="estadoChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3 mt-4">
+        <p>© 2024 ULEAM - Sistema de Gestión de Inventario</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        var ctx = document.getElementById('departamentoChart').getContext('2d');
+        var departamentoChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['Informática', 'Administración', 'Recursos Humanos', 'Docencia'],
+                datasets: [{
+                    label: 'Equipos',
+                    data: [50, 40, 30, 30],
+                    backgroundColor: ['#8A2BE2', '#28a745', '#ffc107', '#dc3545'],
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+
+        // Chart para Estado de Equipos
+        var ctx2 = document.getElementById('estadoChart').getContext('2d');
+        var estadoChart = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['Operativos', 'En Mantenimiento', 'Obsoletos'],
+                datasets: [{
+                    label: 'Cantidad',
+                    data: [120, 10, 20],
+                    backgroundColor: ['#28a745', '#ffc107', '#dc3545'],
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+    </script>
+
+</body>
+</html>

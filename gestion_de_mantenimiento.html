@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Mantenimiento - Inventario ULEAM</title>
+    <link rel="stylesheet" href="mantenimiento.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Inventario ULEAM</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Gestión de Equipos</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Gestión de Mantenimiento</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Usuarios</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="page-title">Gestión de Mantenimiento de Equipos</h1>
+
+        <div class="text-right mb-3">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#addMaintenanceModal">Añadir Nuevo Mantenimiento</button>
+        </div>
+
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Equipo</th>
+                    <th>Tipo de Mantenimiento</th>
+                    <th>Fecha Programada</th>
+                    <th>Técnico Responsable</th>
+                    <th>Estado</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>001</td>
+                    <td>PC - ASUS ROG</td>
+                    <td>Preventivo</td>
+                    <td>01/10/2024</td>
+                    <td>Alex Triviño</td>
+                    <td>Pendiente</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm">Editar</button>
+                        <button class="btn btn-danger btn-sm">Eliminar</button>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="modal fade" id="addMaintenanceModal" tabindex="-1" role="dialog" aria-labelledby="addMaintenanceModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addMaintenanceModalLabel">Añadir Nuevo Mantenimiento</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="equipment">Equipo</label>
+                            <input type="text" class="form-control" id="equipment" placeholder="Ingrese el equipo">
+                        </div>
+                        <div class="form-group">
+                            <label for="maintenanceType">Tipo de Mantenimiento</label>
+                            <input type="text" class="form-control" id="maintenanceType" placeholder="Ingrese el tipo de mantenimiento">
+                        </div>
+                        <div class="form-group">
+                            <label for="scheduledDate">Fecha Programada</label>
+                            <input type="date" class="form-control" id="scheduledDate">
+                        </div>
+                        <div class="form-group">
+                            <label for="technician">Técnico Responsable</label>
+                            <input type="text" class="form-control" id="technician" placeholder="Ingrese el nombre del técnico">
+                        </div>
+                        <div class="form-group">
+                            <label for="status">Estado</label>
+                            <select class="form-control" id="status">
+                                <option>Pendiente</option>
+                                <option>Completado</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3 mt-4">
+        <p>© 2024 ULEAM - Sistema de Gestión de Inventario</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

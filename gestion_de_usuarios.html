@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Usuarios - Inventario ULEAM</title>
+    <link rel="stylesheet" href="usuarios.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Inventario ULEAM</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Gestión de Equipos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Gestión de Mantenimiento</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Gestión de Usuarios</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 class="page-title">Gestión de Usuarios</h1>
+        <div class="text-right mb-3">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#addUserModal">Añadir Nuevo Usuario</button>
+        </div>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Correo Electrónico</th>
+                    <th>Rol</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>Pablo Velez</td>
+                    <td>e1050242583@uleam.edu.ec</td>
+                    <td>Administrador</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm">Editar</button>
+                        <button class="btn btn-danger btn-sm">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody></tbody>
+                <tr>
+                    <td>002</td>
+                    <td>Charly Duarte</td>
+                    <td>c.duarte@uleam.edu.ec</td>
+                    <td>Usuario</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm">Editar</button>
+                        <button class="btn btn-danger btn-sm">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody></tbody>
+                <tr>
+                    <td>003</td>
+                    <td>Byron Castañeda</td>
+                    <td>br.castaneda@uleam.edu.ec</td>
+                    <td>Usuario</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm">Editar</button>
+                        <button class="btn btn-danger btn-sm">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addUserModalLabel">Añadir Nuevo Usuario</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="userName">Nombre</label>
+                            <input type="text" class="form-control" id="userName" placeholder="Ingrese el nombre del usuario">
+                        </div>
+                        <div class="form-group">
+                            <label for="userEmail">Correo Electrónico</label>
+                            <input type="email" class="form-control" id="userEmail" placeholder="Ingrese el correo electrónico">
+                        </div>
+                        <div class="form-group">
+                            <label for="userRole">Rol</label>
+                            <select class="form-control" id="userRole">
+                                <option>Administrador</option>
+                                <option>Técnico</option>
+                                <option>Usuario</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-dark text-white text-center p-3 mt-4">
+        <p>© 2024 ULEAM - Sistema de Gestión de Inventario</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

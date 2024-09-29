@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Equipos - Inventario ULEAM</title> 
+    <link rel="stylesheet" href="inventario.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Inventario ULEAM</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Inicio</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Gestión de Equipos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Mantenimiento</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Usuarios</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="page-title">Gestión de Equipos Informáticos</h1>
+
+        <div class="text-right mb-3">
+            <button class="btn btn-primary" data-toggle="modal" data-target="#addEquipmentModal">Añadir Nuevo Equipo</button>
+        </div>
+
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Tipo de Equipo</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Número de Serie</th>
+                    <th>Ubicación</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>001</td>
+                    <td>PC</td>
+                    <td>ASUS</td>
+                    <td>ROG</td>
+                    <td>19855XPZ</td>
+                    <td>Laboratorio Informática</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm">Editar</button>
+                        <button class="btn btn-danger btn-sm">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>002</td>
+                    <td>Laptop</td>
+                    <td>ASUS</td>
+                    <td>TUF</td>
+                    <td>00157DSH</td>
+                    <td>Recursos Humanos</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm">Editar</button>
+                        <button class="btn btn-danger btn-sm">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+            <tbody>
+                <tr>
+                    <td>003</td>
+                    <td>Laptop</td>
+                    <td>ASUS</td>
+                    <td>VIVOBOOK</td>
+                    <td>55569LAB</td>
+                    <td>Recursos Humanos</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm">Editar</button>
+                        <button class="btn btn-danger btn-sm">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="modal fade" id="addEquipmentModal" tabindex="-1" role="dialog" aria-labelledby="addEquipmentModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addEquipmentModalLabel">Añadir Nuevo Equipo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="equipmentType">Tipo de Equipo</label>
+                            <input type="text" class="form-control" id="equipmentType" placeholder="Ingrese tipo de equipo">
+                        </div>
+                        <div class="form-group">
+                            <label for="brand">Marca</label>
+                            <input type="text" class="form-control" id="brand" placeholder="Ingrese marca">
+                        </div>
+                        <div class="form-group">
+                            <label for="model">Modelo</label>
+                            <input type="text" class="form-control" id="model" placeholder="Ingrese modelo">
+                        </div>
+                        <div class="form-group">
+                            <label for="serialNumber">Número de Serie</label>
+                            <input type="text" class="form-control" id="serialNumber" placeholder="Ingrese número de serie">
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Ubicación</label>
+                            <input type="text" class="form-control" id="location" placeholder="Ingrese ubicación">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-primary">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center p-3 mt-4">
+        <p>© 2024 ULEAM - Sistema de Gestión de Inventario</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
